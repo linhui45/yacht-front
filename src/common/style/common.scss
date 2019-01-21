@@ -1,0 +1,28 @@
+body {
+  font-size: 12px;
+  line-height: 24px;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+
+div, form, img, ul, ol, dl, dt, dd, em, i, p, h2, h1, h2, h3, h4, h5 {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  list-style: none;
+  font-style: normal;
+}
+
+/***链接公用样式***/
+a:link, a:visited {
+  color: #666;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: underline;
+}
