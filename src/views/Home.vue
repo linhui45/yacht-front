@@ -5,7 +5,7 @@
     <!--中心部分-->
     <router-view class="main"></router-view>
     <!--页尾部分-->
-    <y-footer></y-footer>
+    <!--<y-footer></y-footer>-->
   </div>
 </template>
 
