@@ -171,7 +171,7 @@
       海南三亚天气,<em>三亚游艇</em>旅游攻略,到<em>三亚游艇出租</em>地图,三亚的游艇网罗游艇出租,三亚游艇租赁业务进度的提升,
       游艇租赁的价格主要是看租赁的游艇大小不同而不同,基本上是越大越贵！听说厦门,三亚还有上海的毅宏希仕会游艇俱乐部就有提供游艇出租业务,你可以了解看看。2016-03-01
     </p>
-    <div id="gg_img" style="display:none;"><router-link to="/;" target="_blank" title="游艇出租"><img
+    <div id="gg_img" style="display:none;"><router-link to="/" target="_blank" title="游艇出租"><img
       src="${contextPath}/static/images/qpad.jpg" width="1200" height="500"/></router-link></div>
   </div>
 </template>

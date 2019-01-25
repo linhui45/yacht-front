@@ -26,3 +26,8 @@ a:hover {
   color: #000;
   text-decoration: underline;
 }
+
+/**解决footer中引用的tabs标签字体过大的问题**/
+.el-tabs__item {
+  font-size: 13px !important;
+}

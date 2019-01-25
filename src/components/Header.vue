@@ -43,11 +43,63 @@
         <img style=" margin-top:3px;" src="" alt="缺少客服微信logo"/>
       </div>
     </div>
+    <slot name="nav">
+      <div class="nav">
+        <div class="nav-box">
+          <h2>
+            <router-link to="/" title="搜艇网首页" :class="{'nav-hover':tabFlag===1}">首页</router-link>
+          </h2>
+          <span></span>
+          <h2>
+            <router-link to="/" title="租游艇限时抢购" :class="{'nav-hover':tabFlag===2}">特价游艇出租</router-link>
+          </h2>
+          <span></span>
+          <h2>
+            <router-link to="/" title="游艇出售" :class="{'nav-hover':tabFlag===3}">游艇出售</router-link>
+          </h2>
+          <span></span>
+          <h2 class="nav-drop">
+            <router-link to="/" title="游艇资讯" :class="{'nav-hover':tabFlag===4}">游艇资讯</router-link>
+            <ul>
+              <li>
+                <router-link to="/" title="游艇资讯">游艇资讯</router-link>
+              </li>
+              <li>
+                <router-link to="/" title="行业资讯">行业资讯</router-link>
+              </li>
+              <li>
+                <router-link to="/" title="游艇生活">游艇生活</router-link>
+              </li>
+              <li>
+                <router-link to="/" title="游艇助手">游艇助手</router-link>
+              </li>
+              <li>
+                <router-link to="/" title="游艇学院">游艇学院</router-link>
+              </li>
+            </ul>
+          </h2>
+          <span></span>
+          <h2>
+            <router-link to="/" title="游艇大全" :class="{'nav-hover':tabFlag===5}">游艇品牌</router-link>
+          </h2>
+          <span></span>
+          <h2>
+            <router-link to="/" title="游艇码头" :class="{'nav-hover':tabFlag===6}">游艇码头</router-link>
+          </h2>
+          <span></span>
+        </div>
+      </div>
+    </slot>
   </div>
 </template>
 <script>
   export default {
     name: 'Header',
+    data() {
+      return {
+        tabFlag: 1
+      }
+    },
     methods: {
       on: function () {
         window.open("localhost:8089/yacht/hello");
@@ -134,6 +186,104 @@
     .wx-logo {
       height: 100%;
       float: right;
+    }
+  }
+
+  .nav {
+    width: 100%;
+    height: 40px;
+    border-bottom: 2px solid #01a8ed;
+
+    .nav-box {
+      width: 1200px;
+      margin: 0 auto;
+
+      .nav-hover {
+        width: 130px;
+        height: 40px;
+        float: left;
+        color: #FFF;
+        text-decoration: none;
+        background: #01a8ed;
+      }
+
+      span {
+        width: 1px;
+        height: 40px;
+        float: left;
+        background: url(/static/images/navline.jpg) no-repeat;
+      }
+
+      h2 {
+        width: 130px;
+        height: 100%;
+        float: left;
+        text-align: center;
+        line-height: 40px;
+        font-size: 14px;
+        font-weight: normal;
+        position: relative;
+        z-index: 1;
+
+        ul {
+          width: 130px;
+          background: #039fdf;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 999;
+          display: none;
+          padding-bottom: 10px;
+        }
+
+        a:link,a:visited {
+          width: 130px;
+          height: 40px;
+          float: left;
+          color: #666;
+          text-decoration: none;
+        }
+        a:hover {
+          width: 130px;
+          height: 40px;
+          float: left;
+          color: #FFF;
+          text-decoration: none;
+          background: #01a8ed;
+        }
+      }
+
+      h2:hover ul {
+        top: 0;
+        display: block;
+        z-index: 999;
+        li {
+          font-size: 12px;
+          width: 130px;
+          float: left;
+          height: 33px;
+          line-height: 33px;
+          text-align: center;
+          display: inline;
+
+          a:link, a:visited {
+            width: 130px;
+            height: 40px;
+            float: left;
+            text-decoration: none;
+            color: #fff;
+          }
+          a:hover{
+            width: 130px;
+            height: 40px;
+            float: left;
+            text-decoration: none;
+            color: #fff;
+            background: #028fc9;
+          }
+        }
+      }
+
     }
   }
 </style>
