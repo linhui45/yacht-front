@@ -46,44 +46,48 @@
     <slot name="nav">
       <div class="nav">
         <div class="nav-box">
-          <h2>
+          <h2 @click="tabClick(1)">
             <router-link to="/" title="搜艇网首页" :class="{'nav-hover':tabFlag===1}">首页</router-link>
           </h2>
           <span></span>
-          <h2>
-            <router-link to="/" title="租游艇限时抢购" :class="{'nav-hover':tabFlag===2}">特价游艇出租</router-link>
+          <h2 @click="tabClick(2)">
+            <router-link to="/" title="租游艇限时抢购" :class="{'nav-hover':tabFlag===2}">特价游艇出租
+            </router-link>
           </h2>
           <span></span>
-          <h2>
+          <h2 @click="tabClick(3)">
             <router-link to="/" title="游艇出售" :class="{'nav-hover':tabFlag===3}">游艇出售</router-link>
           </h2>
           <span></span>
-          <h2 class="nav-drop">
-            <router-link to="/" title="游艇资讯" :class="{'nav-hover':tabFlag===4}">游艇资讯</router-link>
+          <h2 class="nav-drop" @click="tabClick(4)">
+            <router-link to="/" title="游艇资讯"
+                         :class="{'nav-hover':tabFlag===4 || tabFlag===41 || tabFlag===42 || tabFlag===43 || tabFlag===44 || tabFlag===45}">
+              游艇资讯
+            </router-link>
             <ul>
-              <li>
+              <li @click="tabClick(41)">
                 <router-link to="/" title="游艇资讯">游艇资讯</router-link>
               </li>
-              <li>
+              <li @click="tabClick(42)">
                 <router-link to="/" title="行业资讯">行业资讯</router-link>
               </li>
-              <li>
+              <li @click="tabClick(43)">
                 <router-link to="/" title="游艇生活">游艇生活</router-link>
               </li>
-              <li>
+              <li @click="tabClick(44)">
                 <router-link to="/" title="游艇助手">游艇助手</router-link>
               </li>
-              <li>
+              <li @click="tabClick(45)">
                 <router-link to="/" title="游艇学院">游艇学院</router-link>
               </li>
             </ul>
           </h2>
           <span></span>
-          <h2>
+          <h2 @click="tabClick(5)">
             <router-link to="/" title="游艇大全" :class="{'nav-hover':tabFlag===5}">游艇品牌</router-link>
           </h2>
           <span></span>
-          <h2>
+          <h2 @click="tabClick(6)">
             <router-link to="/" title="游艇码头" :class="{'nav-hover':tabFlag===6}">游艇码头</router-link>
           </h2>
           <span></span>
@@ -101,8 +105,10 @@
       }
     },
     methods: {
-      on: function () {
-        window.open("localhost:8089/yacht/hello");
+      tabClick: function (tabFlag) {
+        const _this = this;
+        _this.tabFlag = tabFlag;
+        console.log(_this.tabFlag)
       }
     }
   }
@@ -207,6 +213,17 @@
         background: #01a8ed;
       }
 
+      ul {
+        width: 130px;
+        background: #039fdf;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 999;
+        display: none;
+        padding-bottom: 10px;
+      }
+
       span {
         width: 1px;
         height: 40px;
@@ -225,24 +242,14 @@
         position: relative;
         z-index: 1;
 
-        ul {
-          width: 130px;
-          background: #039fdf;
-          position: absolute;
-          left: 0;
-          top: 0;
-          z-index: 999;
-          display: none;
-          padding-bottom: 10px;
-        }
-
-        a:link,a:visited {
+        a:link, a:visited {
           width: 130px;
           height: 40px;
           float: left;
           color: #666;
           text-decoration: none;
         }
+
         a:hover {
           width: 130px;
           height: 40px;
@@ -257,33 +264,7 @@
         top: 0;
         display: block;
         z-index: 999;
-        li {
-          font-size: 12px;
-          width: 130px;
-          float: left;
-          height: 33px;
-          line-height: 33px;
-          text-align: center;
-          display: inline;
-
-          a:link, a:visited {
-            width: 130px;
-            height: 40px;
-            float: left;
-            text-decoration: none;
-            color: #fff;
-          }
-          a:hover{
-            width: 130px;
-            height: 40px;
-            float: left;
-            text-decoration: none;
-            color: #fff;
-            background: #028fc9;
-          }
-        }
       }
-
     }
   }
 </style>
