@@ -47,7 +47,7 @@
       <div class="nav">
         <div class="nav-box">
           <h2 @click="tabClick(1)">
-            <router-link to="/" title="搜艇网首页" :class="{'nav-hover':tabFlag===1}">首页</router-link>
+            <router-link to="/index" title="搜艇网首页" :class="{'nav-hover':tabFlag===1}">首页</router-link>
           </h2>
           <span></span>
           <h2 @click="tabClick(2)">

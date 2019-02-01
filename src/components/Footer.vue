@@ -193,7 +193,7 @@
   .footer-top {
     width: 100%;
     background: #F8F8F8;
-    margin-top: 20px;
+    //margin-top: 20px;
     overflow: hidden;
     border-top: #f1f1f1 1px solid;
 
