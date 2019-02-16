@@ -1,20 +1,35 @@
 <template>
   <div>
     <div class="commodity">
-      <div class="container">
+      <div class="banner-container">
         <swiper class='swiImgs' :options="swiperOption" v-if="commodity.length!=0">
           <swiper-slide v-for="(item, index) in commodity" data-index="index" :key="index" class="item">
             <img class='swiImg' :src='item' />
           </swiper-slide>
-          <div class="swiper-scrollbar"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <!-- <div class="swiper-pagination" v-for="(item,index) in detailimages" :key="index" slot="pagination"></div> -->
+          <div class="swiper-button-next" slot="button-next"></div>
+          <div class="swiper-button-prev" slot="button-prev"></div>
+          <!--<div class="swiper-scrollbar" slot="scrollbar"></div>-->
+          <div class="swiper-pagination" v-for="(item,index) in commodity" :key="index" slot="pagination"></div> 
         </swiper>
-        <span class='swiText' v-if='commodity'>{{imgIndex}}/{{commodity.length}}</span>
+        <!--<span class='swiText' v-if='commodity'>{{imgIndex}}/{{commodity.length}}</span>-->
       </div>
     </div>
-
+    <div class="index-hot">
+      <el-row>
+        <el-col :span="6">
+          <el-input value="zhifo"></el-input>
+        </el-col>
+        <el-col :span="6">
+          <el-input value="知否"></el-input>
+        </el-col>
+        <el-col :span="6">
+          <el-input value="知否"></el-input>
+        </el-col>
+        <el-col :span="6">
+          <el-input value="知否"></el-input>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
@@ -53,12 +68,22 @@
                 this.imgIndex = this.realIndex + 1;  //获取轮播图片下标索引；这里有一个坑，之前网上找到的是用activeIndex，但后来网上说的是这个realIndex，原来activeIndex是swiper2.0的；而realIndex是swiper3.0的，（使用realIndex才实现了下标索引）
               },
             },
+            prevButton:{
+              el:'.swiper-button-prev',
+              clickable:true
+            },//上一张
+            nextButton:{
+              el:'.swiper-button-next',
+              clickable:true
+            },//下一张
+            //scrollbar:'.swiper-scrollbar',//滚动条
             pagination: {//分页器设置 
               el: ".swiper-pagination",
               clickable: true,
               type: "bullets"
             }
-          }
+          },
+
         }
       },
 
@@ -82,7 +107,7 @@
 
     background: #f5f5f5;
 
-    .container {
+    .banner-container {
 
       position: relative;
 
@@ -127,5 +152,11 @@
 
     }
 
+    .index-hot {
+      margin: 0 auto;
+      width: 1200px;
+      height: 600px;
+      border: 1px;
+    }
   }
 </style>

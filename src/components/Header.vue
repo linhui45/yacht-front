@@ -263,7 +263,7 @@
       h2:hover ul {
         top: 0;
         display: block;
-        z-index: 999;
+        z-index: 1999;
       }
     }
   }
