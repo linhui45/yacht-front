@@ -14,21 +14,52 @@
         <!--<span class='swiText' v-if='commodity'>{{imgIndex}}/{{commodity.length}}</span>-->
       </div>
     </div>
-    <div class="index-hot">
-      <el-row>
-        <el-col :span="6">
-          <el-input value="zhifo"></el-input>
-        </el-col>
-        <el-col :span="6">
-          <el-input value="知否"></el-input>
-        </el-col>
-        <el-col :span="6">
-          <el-input value="知否"></el-input>
-        </el-col>
-        <el-col :span="6">
-          <el-input value="知否"></el-input>
-        </el-col>
-      </el-row>
+    <div class="tab-index">
+      <div class="index-hot">
+        <dt class="index-nav">一周特价</dt>
+        <dd class="index_tejia wi_fff">
+          <ul>
+            <li>
+              <a href="javascript:;" onclick="tabChange('tab_chuzu','tab_chuzu_xsqg')" title=""
+                 target="_blank">
+                <u><img src="http://www.souyacht.com/upload/xianshi_pic/2016-07-28/2016-07-28_16_34_42.jpg"
+                        width="271" height="218"/></u>
+                <p><i>34人已买</i><b>￥2000</b><i style=" float:none; padding-left:3px;">/ 3小时</i></p>
+                <em>三亚46尺意大利海上法拉利</em>
+                <em><b>荷载-10人</b></em>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" title="" target="_blank">
+                <u><img src="http://www.souyacht.com/upload/xianshi_pic/2016-02-13/2016-02-13_10_16_41.jpg"
+                        width="271" height="218"/></u>
+                <p><i>64人已买</i><b>￥1680</b><i style=" float:none; padding-left:3px;">/ 3小时</i></p>
+                <em>34尺 意大利 Azimu全进口_小黄人</em>
+                <em><b>荷载-8人</b></em>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" title="" target="_blank">
+                <u><img src="http://www.souyacht.com/upload/xianshi_pic/2016-12-28/2016-12-28_09_33_12.jpg"
+                        width="271" height="218"/></u>
+                <p><i>41人已买</i><b>￥3180</b><i style=" float:none; padding-left:3px;">/ 3小时</i></p>
+                <em>45尺法国双体帆船游艇</em>
+                <em><b>荷载-10人</b></em>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" title="" target="_blank">
+                <u><img src="http://www.souyacht.com/upload/xianshi_pic/2016-07-07/2016-07-07_18_46_18.jpg"
+                        width="271" height="218"/></u>
+                <p><i>8人已买</i><b>￥4500</b><i style=" float:none; padding-left:3px;">/ 3小时</i></p>
+                <em>72尺豪华游艇</em>
+                <em><b>荷载-10人</b></em>
+              </a>
+            </li>
+          </ul>
+        </dd>
+
+      </div>
     </div>
   </div>
 </template>
@@ -104,59 +135,81 @@
 
 <style lang="scss" rel="stylesheet/scss" scoped>
   .commodity {
-
     background: #f5f5f5;
-
     .banner-container {
-
       position: relative;
-
       .swiText {
-
         position: absolute;
-
         height: 0.5rem;
-
         width: 0.5rem;
-
         bottom: 0.2rem;
-
         right: 0.3rem;
-
         font-size: 0.33rem;
-
         color: #fff;
-
         z-index: 10;
-
       }
-
       .swiImgs {
-
         width: 100%;
-
         .item {
-
           height: 433px;
-
           .swiImg {
-
             height: 433px;
             width: 100%;
-
           }
-
         }
+      }
+    }
+  }
 
+  .index-nav {
+    font-size: 22px;
+    border-left: 4px solid #01a8ed;
+    padding-left: 10px;
+    height: 30px;
+    line-height: 30px;
+    p {
+      font-size: 14px;
+      float: right;
+      overflow: hidden;
+      em {
+        overflow: hidden;
+        a {
+          display: block;
+          overflow: hidden;
+          border-radius: 3px;
+          padding: 0 5px;
+          margin-left: 10px;
+          float: left;
+        }
+        a:hover {
+          background: #32b8ef;
+          color: #fff;
+        }
+        a.in_navhover {
+          background: #32b8ef;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .tab-index{
+    background: #f6f6f6;
+    overflow: hidden;
+    .index-hot {
+      overflow: hidden;
+      width: 1200px;
+      overflow: hidden;
+      margin: 0 auto;
+      .index_tejia {
+        overflow: hidden;
       }
 
-    }
-
-    .index-hot {
-      margin: 0 auto;
-      width: 1200px;
-      height: 600px;
-      border: 1px;
+      dd{
+        overflow: hidden;
+        float: left;
+        margin-top: 4px;
+      }
     }
   }
 </style>
